@@ -126,7 +126,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (gameManager.isGameActive)
+        if (gameManager.isGameActive && collision.gameObject.name != "Obstacle")
         {
             StartCoroutine(Respawn());
         }
@@ -134,7 +134,7 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator Respawn()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1.0f);
 
         if (gameManager.isGameActive)
         {
