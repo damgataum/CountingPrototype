@@ -2,11 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Box : MonoBehaviour
+public class Box : MovingObject
 {
-    [SerializeField] float speed = 3f;
-    [SerializeField] float xRange = 6.0f;
-    private float moveDir = 1.0f;
     private GameManager gameManager;
 
     // Start is called before the first frame update
@@ -20,7 +17,7 @@ public class Box : MonoBehaviour
     {
         if (gameManager.isGameActive)
         {
-            MoveBox();     
+            MoveLinear();     
         }
     }
 
@@ -30,20 +27,5 @@ public class Box : MonoBehaviour
         {
             gameManager.UpdateScore(1);
         }
-    }
-
-    private void MoveBox()
-    {
-        if (transform.position.x < -xRange)
-        {
-            moveDir = 1f;
-        }
-
-        if (transform.position.x > xRange)
-        {
-            moveDir = -1f;
-        }
-
-        transform.Translate(Vector3.forward * (moveDir * Time.deltaTime * speed));
     }
 }
