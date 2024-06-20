@@ -20,20 +20,8 @@ public class Box : MonoBehaviour
     {
         if (gameManager.isGameActive)
         {
-
-            if (transform.position.x < -xRange)
-            {
-                moveDir = 1f;
-            }
-
-            if (transform.position.x > xRange)
-            {
-                moveDir = -1f;
-            }
-
-            transform.Translate(Vector3.forward * moveDir * Time.deltaTime * speed);
+            MoveBox();     
         }
-
     }
 
     private void OnTriggerEnter(Collider other)
@@ -42,5 +30,20 @@ public class Box : MonoBehaviour
         {
             gameManager.UpdateScore(1);
         }
+    }
+
+    private void MoveBox()
+    {
+        if (transform.position.x < -xRange)
+        {
+            moveDir = 1f;
+        }
+
+        if (transform.position.x > xRange)
+        {
+            moveDir = -1f;
+        }
+
+        transform.Translate(Vector3.forward * (moveDir * Time.deltaTime * speed));
     }
 }
