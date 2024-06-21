@@ -11,4 +11,10 @@ public class Obstacle : MovingObject
             MoveLinear();     
         }
     }
+
+    public override void MoveLinear()
+    {   
+        speed = 2f;
+        base.MoveLinear();
+    }
 }

@@ -7,7 +7,7 @@ public abstract class MovingObject : MonoBehaviour
     protected GameManager gameManager;
     private float moveDir = 1.0f;
     [SerializeField] float xRange = 6.0f;
-    public float speed = 3f;
+    public float speed = 1.0f;
 
     void Start()
     {

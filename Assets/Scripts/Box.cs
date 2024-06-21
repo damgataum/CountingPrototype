@@ -19,4 +19,10 @@ public class Box : MovingObject
             gameManager.UpdateScore(1);
         }
     }
+
+    public override void MoveLinear()
+    {   
+        speed = 3f;
+        base.MoveLinear();
+    }
 }
