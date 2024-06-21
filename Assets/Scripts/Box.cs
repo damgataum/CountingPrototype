@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Box : MovingObject
+public class Box : MovingObject // INHERITANCE
 {
     void Update()
     {
@@ -20,7 +20,8 @@ public class Box : MovingObject
         }
     }
 
-    public override void MoveLinear()
+    // ABSTRACTION
+    public override void MoveLinear() // POLYMORPHISM
     {   
         Speed = 3f;
         base.MoveLinear();

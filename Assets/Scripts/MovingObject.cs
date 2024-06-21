@@ -8,6 +8,8 @@ public abstract class MovingObject : MonoBehaviour
     protected GameManager gameManager;
     private float moveDir = 1.0f;
     private float xRange = 6.0f;
+
+    // ENCAPSULATION
     private float m_Speed = 1.0f;
     public float Speed {
         get {return m_Speed;} // getter returns backing field
@@ -19,7 +21,8 @@ public abstract class MovingObject : MonoBehaviour
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
-    public virtual void MoveLinear()
+    // ABSTRACTION
+    public virtual void MoveLinear() //POLYMORPHISM
     {
         if (transform.position.x < -xRange)
         {

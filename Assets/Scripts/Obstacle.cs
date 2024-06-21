@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Obstacle : MovingObject
+public class Obstacle : MovingObject // INHERITANCE
 {
     void Update()
     {
@@ -12,7 +12,8 @@ public class Obstacle : MovingObject
         }
     }
 
-    public override void MoveLinear()
+    // ABSTRACTION
+    public override void MoveLinear() // POLYMORPHISM
     {   
         Speed = 2f;
         base.MoveLinear();
