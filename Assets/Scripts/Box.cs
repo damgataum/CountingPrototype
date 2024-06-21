@@ -22,7 +22,7 @@ public class Box : MovingObject
 
     public override void MoveLinear()
     {   
-        speed = 3f;
+        Speed = 3f;
         base.MoveLinear();
     }
 }

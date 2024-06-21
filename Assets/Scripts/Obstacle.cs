@@ -14,7 +14,7 @@ public class Obstacle : MovingObject
 
     public override void MoveLinear()
     {   
-        speed = 2f;
+        Speed = 2f;
         base.MoveLinear();
     }
 }
