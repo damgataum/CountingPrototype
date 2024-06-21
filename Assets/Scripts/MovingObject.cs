@@ -4,9 +4,15 @@ using UnityEngine;
 
 public abstract class MovingObject : MonoBehaviour
 {
+    protected GameManager gameManager;
     private float moveDir = 1.0f;
     [SerializeField] float xRange = 6.0f;
-    [SerializeField] float speed = 3f;
+    public float speed = 3f;
+
+    void Start()
+    {
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+    }
 
     public virtual void MoveLinear()
     {
@@ -20,6 +26,7 @@ public abstract class MovingObject : MonoBehaviour
             moveDir = -1f;
         }
 
-        transform.Translate(Vector3.forward * (moveDir * Time.deltaTime * speed));
+        // Translate relative to World
+        transform.Translate(Vector3.right * (moveDir * Time.deltaTime * speed), Space.World);
     }
 }
